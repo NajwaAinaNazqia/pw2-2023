@@ -1,5 +1,4 @@
 <?php
-
 class Kartu {
     private $conn;
     private $table_name = "kartu";
