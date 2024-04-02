@@ -3,6 +3,7 @@
 class Kartu {
     private $conn;
     private $table_name = "kartu";
+
     public $id;
     public $kode;
     public $nama;
@@ -31,7 +32,7 @@ class Kartu {
     public function store(){
         $query = "INSERT INTO {$this->table_name} 
                 (kode, nama, diskon, iuran ) 
-                VALUES (?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
                 ";
         $data = $this->conn->prepare($query);
     
@@ -57,7 +58,7 @@ class Kartu {
     // Update kartu ke database
     public function update(){
         $query = "UPDATE {$this->table_name} 
-                SET kode=?, nama=?, diskon=?, iuran=? 
+                SET kode=?, nama=?, harga_beli=?, harga_jual=?, stok=?, min_stok=?, jenis_produk_id=? 
                 WHERE id=?";
         $data = $this->conn->prepare($query);
     
